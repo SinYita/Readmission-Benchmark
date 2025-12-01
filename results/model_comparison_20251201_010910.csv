@@ -1,0 +1,3 @@
+model_name,accuracy,precision,recall,f1_score,sensitivity,specificity,auc_roc,auc_pr,ppv,npv
+LACE Index,0.8889,0.0,0.0,0.0,0.0,1.0,0.3125,0.1181,0.0,0.8889
+Random Forest,0.8333,0.0,0.0,0.0,0.0,0.9375,0.4375,0.1389,0.0,0.8824

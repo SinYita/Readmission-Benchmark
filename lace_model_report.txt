@@ -1,0 +1,64 @@
+
+LACE Index Baseline Model - Summary Report
+==========================================
+
+METHODOLOGY:
+The LACE index is a validated clinical prediction tool for hospital readmission risk.
+It combines four key factors:
+
+L - Length of stay (0-7 points)
+  • <1 day: 0 points
+  • 1 day: 1 point  
+  • 2 days: 2 points
+  • 3 days: 3 points
+  • 4-6 days: 4 points
+  • 7-13 days: 5 points
+  • ≥14 days: 7 points
+
+A - Acuteness of admission (0-3 points)
+  • Emergency/Urgent: 3 points
+  • Elective: 0 points
+
+C - Comorbidities via Charlson Index (0-5 points)
+  • Based on ICD-9 diagnoses
+  • Weighted by condition severity
+  • Capped at 5 points for LACE
+
+E - Emergency visits in prior 6 months (0-4 points)
+  • 0 visits: 0 points
+  • 1 visit: 1 point
+  • 2 visits: 2 points
+  • 3 visits: 3 points
+  • ≥4 visits: 4 points
+
+RESULTS INTERPRETATION:
+• The model shows low predictive performance (Test R² = -0.15, AUC = 0.125)
+• This suggests readmission prediction is challenging with LACE alone
+• The low readmission rate (8.5%) creates class imbalance issues
+• LACE may work better for risk stratification than binary prediction
+
+CLINICAL INSIGHTS:
+• Mean LACE score: 10.0 ± 3.0 (moderate risk range)
+• Emergency admissions comprise majority of cases
+• Length of stay is primary contributor to LACE score
+• Comorbidities show negative correlation (unexpected, may need review)
+
+RECOMMENDATIONS FOR IMPROVEMENT:
+1. Address class imbalance with sampling techniques
+2. Add temporal features (time-to-readmission, seasonal effects)
+3. Include medication, procedure, and vital sign data
+4. Consider ensemble methods combining LACE with other predictors
+5. Validate on larger, more diverse patient populations
+6. Use appropriate evaluation metrics for imbalanced data (precision, recall, F1)
+
+LIMITATIONS:
+• Small sample size (129 admissions, 11 readmissions)
+• MIMIC-III demo data may not be representative
+• Simple linear regression may be insufficient for complex relationships
+• Missing data handling could be improved
+• No external validation performed
+
+CONCLUSION:
+While the LACE index provides a structured approach to readmission risk assessment,
+this implementation shows that additional features and more sophisticated modeling
+approaches are needed for accurate readmission prediction in this dataset.
