@@ -20,10 +20,16 @@ for dir_path in [RESULTS_DIR, MODELS_DIR, PREDICTIONS_DIR, REPORTS_DIR]:
 # Model configurations
 MODEL_CONFIGS = {
     'lace': {
-        'name': 'LACE Index Linear Regression',
-        'algorithm': 'linear_regression',
+        'name': 'LACE Index Logistic Regression',
+        'algorithm': 'logistic_regression',
         'features': ['L_score', 'A_score', 'C_score', 'E_score', 'LACE_score', 'los_days', 'charlson_score'],
-        'hyperparameters': {}
+        'hyperparameters': {
+            'C': 1.0,
+            'solver': 'liblinear',
+            'random_state': 42,
+            'max_iter': 1000,
+            'class_weight': 'balanced'
+        }
     },
     'random_forest': {
         'name': 'Random Forest Classifier',

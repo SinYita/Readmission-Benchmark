@@ -28,7 +28,7 @@ results/
 
 ## Models Implemented
 
-### 1. LACE Index Baseline
+### 1. LACE Index Baseline (Logistic Regression)
 - **L**ength of stay (0-7 points)
 - **A**cuteness of admission (0-3 points)
 - **C**omorbidities via Charlson Index (0-5 points)
